@@ -32,7 +32,7 @@ Design and implement a small office network using Cisco devices in GNS3. Demonst
 
 ## 📊 Topology
 
-![topology](Small-Office_Topo;ogy.png)
+![topology](topology.png)
 
 ---
 
