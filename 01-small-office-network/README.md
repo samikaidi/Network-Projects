@@ -63,3 +63,13 @@ Design and implement a small office network using Cisco devices in GNS3. Demonst
 - Unused Port Shutdown
 - SSH Management
 ```
+## 🧪 Verification
+
+| Test | Screenshot |
+|------|------------|
+| VLAN | [View](screenshots/vlan.png) |
+| Trunk | [View](screenshots/trunk.png) |
+| Routing | [View](screenshots/routing.png) |
+| DHCP | [View](screenshots/dhcp.png) |
+| Security | [View](screenshots/security.png) |
+| SSH | [View](screenshots/ssh.png) |
