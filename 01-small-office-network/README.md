@@ -47,3 +47,19 @@ Design and implement a small office network using Cisco devices in GNS3. Demonst
 - VLAN 99 Gateway: 192.168.100.120
 - DHCP Server
 - SSH Management
+
+```
+### Switch
+``` 
+- VLAN 10 – IT
+- VLAN 20 – HR
+- VLAN 30 – Guests
+- VLAN 99 – Management
+- 802.1Q Trunk
+- Access Ports
+- Port Security
+- PortFast
+- BPDU Guard
+- Unused Port Shutdown
+- SSH Management
+```
