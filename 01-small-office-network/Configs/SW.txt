@@ -1,0 +1,214 @@
+Current configuration : 4976 bytes
+!
+! Last configuration change at 15:09:45 UTC Sun Sep 13 2026 by sami
+!
+version 17.15
+service timestamps debug datetime msec
+service timestamps log datetime msec
+!
+hostname SW
+!
+boot-start-marker
+boot-end-marker
+!
+!
+logging discriminator EXCESS severity drops 6 msg-body drops EXCESSCOLL
+logging buffered 50000
+logging console discriminator EXCESS
+no aaa new-model
+!
+!
+!
+no ip icmp rate-limit unreachable
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip audit notify log
+ip audit po max-events 100
+no ip domain lookup
+ip domain name cisco.com
+no ip cef
+login on-success log
+no ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-2048001
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-2048001
+ revocation-check none
+ rsakeypair TP-self-signed-2048001
+ hash sha512
+!
+!
+crypto pki certificate chain TP-self-signed-2048001
+ certificate self-signed 01
+  3082032A 30820212 A0030201 02020101 300D0609 2A864886 F70D0101 0D050030
+  2E312C30 2A060355 04030C23 494F532D 53656C66 2D536967 6E65642D 43657274
+  69666963 6174652D 32303438 30303130 1E170D32 36303931 33313433 3332305A
+  170D3336 30393132 31343333 32305A30 2E312C30 2A060355 04030C23 494F532D
+  53656C66 2D536967 6E65642D 43657274 69666963 6174652D 32303438 30303130
+  82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02 82010100
+  A0BD8C19 2742B6EA 1ECB14D6 9DB60698 215E9FD0 A58A34EC B71366A3 291933F5
+  ED287AA4 031193B5 0C8BD64D C7D614F4 291EEC45 DCD8EF61 AC26A0D6 82E1624E
+  B03B3749 740B791A B135A479 FE2409F4 6AB342CE DA97FE4B B9E6FF20 336DE300
+  1EC600DB 0DD768DF 6CDAA858 8C90E9AD 93A0858C 76F7AA54 6A576C3D A8335436
+  57237A29 1B63C653 8A3E565E 0742E554 8F40B4E1 83D1A9AC CA6CC8DB F7F715CB
+  9EDC2C9A CF71FD9C B5F20811 003AB596 353B2452 04FE4583 F7E1903A 9B43A52A
+  F379EA69 9BAB4543 D48A7B8E 7789F68D 4C02C391 84E38FFA 72199910 29C8D051
+  5310847D 2C94A93C 878377A3 E6A3E4D0 6A17587D 07D38695 4EB70C60 076E632B
+  02030100 01A35330 51301D06 03551D0E 04160414 4C3D2D92 6A1422BB 452D2C60
+  22325CEE 8FCC39F6 301F0603 551D2304 18301680 144C3D2D 926A1422 BB452D2C
+  6022325C EE8FCC39 F6300F06 03551D13 0101FF04 05300301 01FF300D 06092A86
+  4886F70D 01010D05 00038201 010093B3 F11982D5 288444E0 67022805 FBDA50F8
+  1C67C60E D0EE9E5F F9684B24 DB265B30 D1DCA781 A62BCA6C 5AACB92B 9E064D40
+  F5F566E8 62B6A1BD 07015F7C 75BE5B13 C069562A 267086C8 42D78D64 8018AF2A
+  22823790 B55665BD D7EA73B2 70411245 19BF0422 596E3CE4 5CBAFA99 5A592346
+  F4A13B28 12A5CBC8 15F815EE 1679B474 1112EB1C 48F9375A 0EBE2C90 D09CA27F
+  1AAC93AA 456B9592 F30409DA C88221B6 5D11C485 058D5E0E 9A875054 ED5DEA65
+  3F36E868 DD0D0381 6BED344C 5C11C1D0 CBB863EA E42AD369 82029E28 A77C7E32
+  43698F22 F282840B 2BE66FEA B2D43918 A869E80A 4C2F3FB5 2C5D0300 F3052F00
+  1CAD1791 C6AFD467 0EE07078 8419
+        quit
+!
+!
+memory free low-watermark processor 27165
+!
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+username sami privilege 15 secret 9 $9$ocCCyi5uTbgLOk$vJcgiWIQ.QqqrhwAbLKLSp6..Td2yGrai43T3/GjLmw
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+!
+interface Ethernet0/0
+ description Trunck-Port to Router
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 10,20,30
+ switchport mode trunk
+!
+interface Ethernet0/1
+ description IT-PC
+ switchport access vlan 10
+ switchport mode access
+ switchport port-security violation restrict
+ switchport port-security mac-address sticky
+ switchport port-security
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface Ethernet0/2
+ description HR-PC
+ switchport access vlan 20
+ switchport mode access
+ switchport port-security violation restrict
+ switchport port-security mac-address sticky
+ switchport port-security
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface Ethernet0/3
+ description GUEST-PC
+ switchport access vlan 30
+ switchport mode access
+ switchport port-security violation restrict
+ switchport port-security mac-address sticky
+ switchport port-security
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface Ethernet1/0
+ shutdown
+!
+interface Ethernet1/1
+ shutdown
+!
+interface Ethernet1/2
+ shutdown
+!
+interface Ethernet1/3
+ shutdown
+!
+interface Ethernet2/0
+ shutdown
+!
+interface Ethernet2/1
+ shutdown
+!
+interface Ethernet2/2
+ shutdown
+!
+interface Ethernet2/3
+ shutdown
+!
+interface Ethernet3/0
+ shutdown
+!
+interface Ethernet3/1
+ shutdown
+!
+interface Ethernet3/2
+ shutdown
+!
+interface Ethernet3/3
+ description Management-PC
+ switchport access vlan 99
+ switchport mode access
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan99
+ description SW-Management
+ ip address 192.168.100.100 255.255.255.0
+!
+ip forward-protocol nd
+!
+!
+ip tcp synwait-time 5
+ip http server
+ip http secure-server
+ip ssh bulk-mode 131072
+!
+no logging btrace
+!
+!
+!
+control-plane
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ logging synchronous
+ login local
+ transport input ssh
+!
+!
+end
+
