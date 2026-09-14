@@ -32,7 +32,7 @@ Design and implement a small office network using Cisco devices in GNS3. Demonst
 
 ## 📊 Topology
 
-![topology](topology.png)
+![topology](topology/topology.png)
 
 ---
 
@@ -67,9 +67,10 @@ Design and implement a small office network using Cisco devices in GNS3. Demonst
 
 | Test | Screenshot |
 |------|------------|
-| VLAN | [View](screenshots/vlan.png) |
-| Trunk | [View](screenshots/trunk.png) |
-| Routing | [View](screenshots/routing.png) |
+| VLAN | [View](screenshots/Vlans.png) |
+| Trunk | [View](screenshots/Trunk.png) |
+| Routing | [View](screenshots/Routing.png) |
 | DHCP | [View](screenshots/dhcp.png) |
-| Security | [View](screenshots/security.png) |
-| SSH | [View](screenshots/ssh.png) |
+| Security | [View](screenshots/PortSecurity.png) |
+| SW-SSH | [View](screenshots/SW-ssh.png) |
+| R-SSH | [View](screenshots/RouterSShh.png) |
