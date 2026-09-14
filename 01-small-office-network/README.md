@@ -72,5 +72,5 @@ Design and implement a small office network using Cisco devices in GNS3. Demonst
 | Routing | [View](screenshots/Routing.png) |
 | DHCP | [View](screenshots/dhcp.png) |
 | Security | [View](screenshots/PortSecurity.png) |
-| SW-SSH | [View](screenshots/SW-ssh.png) |
-| R-SSH | [View](screenshots/RouterSShh.png) |
+| SW-SSH | [View](screenshots/sshToSw.png) |
+| R-SSH | [View](screenshots/sshToRouter.png) |
