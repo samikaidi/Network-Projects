@@ -81,5 +81,4 @@ This project demonstrates VLAN segmentation, inter-VLAN routing, DHCP, WAN conne
 OSPF is used to exchange routing information between the HQ and Branch routers.
 
 ![Topology](topology/OspfDiagram.png)
-        │                           │
-   HQ Networks               Branch Networks
+
