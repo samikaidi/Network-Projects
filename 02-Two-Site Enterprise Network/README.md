@@ -88,19 +88,7 @@ Extended ACLs are used to control communication between departments across the H
 
 ### Communication Policy
 
-| Source | Destination | Result |
-|---|---|---|
-| IT | IT | ✅ Allowed |
-| IT | HR | ❌ Blocked |
-| IT | Guest | ❌ Blocked |
-| HR | IT | ❌ Blocked |
-| HR | HR | ✅ Allowed |
-| HR | Guest | ❌ Blocked |
-| Guest | IT | ❌ Blocked |
-| Guest | HR | ❌ Blocked |
-| Guest | Guest | ✅ Allowed |
-
-The same policy is applied in both directions:
+![Topology](topology/ACL.png)
 
 - HQ → Branch
 - Branch → HQ
