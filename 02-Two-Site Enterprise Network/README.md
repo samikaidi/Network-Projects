@@ -82,3 +82,41 @@ OSPF is used to exchange routing information between the HQ and Branch routers.
 
 ![Topology](topology/OspfDiagram.png)
 
+## 🔐 ACL Security
+
+Extended ACLs are used to control communication between departments across the HQ and Branch sites.
+
+### Communication Policy
+
+| Source | Destination | Result |
+|---|---|---|
+| IT | IT | ✅ Allowed |
+| IT | HR | ❌ Blocked |
+| IT | Guest | ❌ Blocked |
+| HR | IT | ❌ Blocked |
+| HR | HR | ✅ Allowed |
+| HR | Guest | ❌ Blocked |
+| Guest | IT | ❌ Blocked |
+| Guest | HR | ❌ Blocked |
+| Guest | Guest | ✅ Allowed |
+
+The same policy is applied in both directions:
+
+- HQ → Branch
+- Branch → HQ
+
+This allows each department to communicate with the corresponding department at the other site while preventing communication between different departments.
+
+---
+
+## 🔒 Layer 2 Security
+
+Access ports are protected using:
+
+- Port Security
+- Sticky MAC addresses
+- PortFast
+- BPDU Guard
+- Unused ports shutdown
+
+---
