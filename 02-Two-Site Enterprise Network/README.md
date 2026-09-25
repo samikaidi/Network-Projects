@@ -108,3 +108,15 @@ Access ports are protected using:
 - Unused ports shutdown
 
 ---
+## 🔍 Project Verification
+
+| Test                  | Screenshot                                      |
+| --------------------- | ----------------------------------------------- |
+| VLAN Configuration    | [View](screenshots/vlans.png)                   |
+| Trunk Configuration   | [View](screenshots/int-trunk.png)               |
+| Interface Status      | [View](screenshots/int-brief.png)               |
+| OSPF Neighbor         | [View](screenshots/ospf-neighbor.png)           |
+| OSPF Routes           | [View](screenshots/ospf-route.png)              |
+| ACL Configuration     | [View](screenshots/ACLs.png)                    |
+| ACL Connectivity      | [View](screenshots/ping_connectivity.png)       |
+| Port Security         | [View](screenshots/port-sec.png)                |
