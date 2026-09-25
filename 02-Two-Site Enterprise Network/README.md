@@ -42,7 +42,7 @@ This project demonstrates VLAN segmentation, inter-VLAN routing, DHCP, WAN conne
 ## 🖥️ Tools
 
 - GNS3
-- 2 Cisco CSR1000v
+- 2 Cisco C7200
 - 2 Cisco IOS L2 Switches
 - 6 VPCS
 
